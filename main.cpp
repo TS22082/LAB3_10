@@ -9,31 +9,33 @@
 #include <iostream>
 using namespace std;
 
-void dblArray(int array[], int size){
-
-    int doubleSize = size*2;
-    int doubledArray[doubleSize];
-    
-    for (int i = 0; i < size; i++){
-    
-        doubledArray[i] = array[i];
-    }
-    
-    for (int i = size; i < doubleSize; i++){
-        
-        doubledArray[i] = 0;
-    }
-    
-    for (int i = 0; i < doubleSize; i++){
-    
-        cout << doubledArray[i] << endl;
-    }
-}
+void dblArray(int array[], int size);
 
 int main() {
     
     int numArr[] = {1,2,3,4,5};
-    
     dblArray(numArr, 5);
+}
+
+void dblArray(int array[], int size){
     
+    int doubleSize = size*2;
+    int doubledArray[doubleSize];
+    
+    for (int i = 0; i < doubleSize; i++){
+    
+        if (i < size){
+            
+            doubledArray[i] = array[i];
+        
+        } else {
+    
+            doubledArray[i] = 0;
+        }
+    }
+    
+    for (int i = 0; i < doubleSize; i++){
+        
+        cout << doubledArray[i] << endl;
+    }
 }
